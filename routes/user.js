@@ -7,7 +7,7 @@ const nodemailer = require("nodemailer");
 const User = require("../models/User");
 const UserPoint = require("../models/UserPoint");
 const UserOTPVerification = require("../models/UserOtpVerification");
-const { verifyToken } = require("./verifytoken");
+const verifyToken = require("./verifyToken")
 
 // nodemailer
 let transporter = nodemailer.createTransport({
