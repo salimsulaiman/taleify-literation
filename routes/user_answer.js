@@ -4,7 +4,7 @@ const router = express.Router();
 const UserAnswer = require("../models/UserAnswer");
 const User = require("../models/User");
 const Question = require("../models/Question");
-const { verifyToken } = require("./verifyToken");
+const verifyToken = require("./verifyToken")
 
 router.post("/", verifyToken, async (req, res) => {
   const { user, question, userAnswer } = req.body;
