@@ -4,7 +4,7 @@ const router = express.Router();
 const Literation = require("../models/Literation");
 
 router.post("/", async (req, res) => {
-  const { title, picture, author, rating, desc } = req.body;
+  const { title, picture, author, genre, rating, desc } = req.body;
 
   function stringToSlug(str) {
     str = str.trim().toLowerCase();
@@ -52,7 +52,9 @@ router.get("/search", async (req, res) => {
   try {
     const { title } = req.query;
 
-    const data = await Literation.find({ slug: { $regex: title, $options: "i" } })
+    const data = await Literation.find({
+      slug: { $regex: title, $options: "i" },
+    })
       .populate("author")
       .populate("genre");
     res.status(200).json(data);
@@ -66,7 +68,10 @@ router.get("/search", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
   try {
-    const data = await Literation.findById(req.params.id).populate("author").populate("genre").exec();
+    const data = await Literation.findById(req.params.id)
+      .populate("author")
+      .populate("genre")
+      .exec();
     if (!data) {
       return res.status(404).json({
         status: res.statusCode,
