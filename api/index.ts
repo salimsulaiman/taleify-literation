@@ -10,22 +10,22 @@ app.use(express.json());
 app.use(cors());
 
 // import routes
-const literationRoutes = require("./routes/literation");
-const authorRoutes = require("./routes/author");
-const userRoutes = require("./routes/user");
-const genreRoutes = require("./routes/genre");
-const userLiterationRoutes = require("./routes/user_literation");
-const storyRoutes = require("./routes/story");
-const questionRoutes = require("./routes/question");
-const userAnswerRoutes = require("./routes/user_answer");
-const userPointRoutes = require("./routes/user_point");
-const imageRoutes = require("./routes/image");
-const ratingRoutes = require("./routes/rating");
+const literationRoutes = require("../routes/literation");
+const authorRoutes = require("../routes/author");
+const userRoutes = require("../routes/user");
+const genreRoutes = require("../routes/genre");
+const userLiterationRoutes = require("../routes/user_literation");
+const storyRoutes = require("../routes/story");
+const questionRoutes = require("../routes/question");
+const userAnswerRoutes = require("../routes/user_answer");
+const userPointRoutes = require("../routes/user_point");
+const imageRoutes = require("../routes/image");
+const ratingRoutes = require("../routes/rating");
 
 // serve static file
 app.use(
   "/image/profile",
-  express.static(path.join(__dirname, "image/profile"))
+  express.static(path.join(__dirname, "../image/profile"))
 );
 
 // routes
