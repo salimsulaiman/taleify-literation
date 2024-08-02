@@ -25,7 +25,7 @@ const ratingRoutes = require("../routes/rating");
 // serve static file
 app.use(
   "/image/profile",
-  express.static(path.join(__dirname, "./image/profile"))
+  express.static(path.join(__dirname, "../image/profile"))
 );
 
 // routes
