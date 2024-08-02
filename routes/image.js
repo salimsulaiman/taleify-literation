@@ -22,7 +22,7 @@ router.post("/upload_avatar/:id", upload.single("profilePicture"), async (req, r
     const updatedUser = await User.findByIdAndUpdate(
       id,
       {
-        picture: `https://taleify-literation-production.up.railway.app/image/profile/${filename}`,
+        picture: `https://taleify-literation.vercel.app/image/profile/${filename}`,
       },
       { new: true }
     );
